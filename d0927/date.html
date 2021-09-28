@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        window.onload = function() {
+            showTime();
+            studyDate();
+        };
+
+        function showTime() {
+            var now = new Date();
+            console.log(now);
+
+            var year = now.getFullYear();
+            var month = now.getMonth() + 1;
+            var date = now.getDate();
+            var day = now.getDay();
+            var hour = now.getHours();
+            var minute = now.getMinutes();
+            var second = now.getSeconds();
+
+
+            console.log(year, month, date, day, hour, minute, second);
+
+            var str = year + "년 ";
+            str += month + "월 ";
+            str += date + "일 ";
+            str += hour + ":";
+            str += minute + ":";
+            str += second;
+
+            console.log(str);
+
+            var span = document.getElementById("time");
+            span.innerHTML = str;
+
+
+            var time = now.getTime();
+            console.log("time", time);
+        }
+
+        function studyDate() {
+            var now = new Date();
+            var nowTime = now.getTime();
+            var tTime = nowTime +  (24 * 60 * 60 * 1000);
+            var tomorrow = new Date(tTime);
+            console.log(tomorrow);
+
+            var date = new Date();
+            date.setFullYear(2021, 11, 25);
+            date.setHours(12, 0, 0);
+
+            console.log("크리스마스", date);
+        }
+
+
+    </script>
+
+</head>
+<body>
+    <div>
+        현재 시각 : <span id="time">2021년 9월 27일 13:52:12</span>
+    </div>
+</body>
+</html>

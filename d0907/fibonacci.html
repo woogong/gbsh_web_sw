@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var value = prompt("정수를 입력하세요") - 0;
+
+        var first = 0;
+        var second = 1;
+        var result = 0;
+
+        if (value == 0) {
+            result = 0;
+        } else if (value == 1) {
+            result = 1;
+        } else {
+            for (var i = 0 ; i < value - 1; i++) {
+                result = first + second;
+                first = second;
+                second = result;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Fibonacci 수열</h1>
+
+    <span><script>document.write(value + " : " + result);</script></span>
+</body>
+</html>

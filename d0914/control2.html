@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #field {
+            width: 95%;
+            height: 760px;
+            border: 1px solid #000;
+            margin: 10px auto 10px auto;
+            position: relative;
+        }
+
+        #circle {
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-color: #FF00FF;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+
+        button {
+            font-size: 2rem;
+            width: 10rem;
+            margin: 0.2rem;
+        }
+
+        .control {
+            margin-left: 30px;
+            text-align: center;
+            display: flex;
+        }
+
+        .arrow {
+            width: 60%;
+        }
+
+        .speed {
+            width: 15rem;
+            font-size: 2rem;
+        }
+
+        #speed {
+            font-size: 2rem;
+            width: 7rem;
+            text-align: center;
+        }
+
+    </style>
+
+    <script>
+        var circle;
+        var field;
+
+        var btnLeft;
+        var btnRight;
+        var btnUp;
+        var btnDown;
+
+        var posX;
+        var posY;
+
+        var fieldWidth;
+        var fieldHeight;
+
+        var circleRadius;
+
+        window.onload = function() {
+            btnLeft = document.getElementById("btn_left");
+            btnRight = document.getElementById("btn_right");
+            btnUp = document.getElementById("btn_up");
+            btnDown = document.getElementById("btn_down");
+
+            circle = document.getElementById("circle");
+            field = document.getElementById("field");
+
+            circleRadius = parseInt(getComputedStyle(circle).getPropertyValue("width")) ;
+            fieldWidth = parseInt(getComputedStyle(field).getPropertyValue("width")) - circleRadius;
+            fieldHeight = parseInt(getComputedStyle(field).getPropertyValue("height")) - circleRadius;
+
+            btnLeft.onclick = function() {
+                move(-1, 0);
+            };
+
+            btnRight.onclick = function() {
+                move(1, 0);
+            };
+
+            btnUp.onclick = function() {
+                move(0, -1);
+            };
+
+            btnDown.onclick = function() {
+                move(0, 1);
+            };
+
+            document.body.onkeydown = function(event) {
+                if (37 == event.keyCode) {  // left
+                    btnLeft.click();
+                } else if (39 == event.keyCode) {  // right
+                    btnRight.click();
+                } else if (38 == event.keyCode) {  // top
+                    btnUp.click();
+                } else if (40 == event.keyCode) {  // bottom
+                    btnDown.click();
+                } 
+            };
+        };
+
+        function move(horizontal, vertical) {
+            var speed = parseInt(document.getElementById("speed").value);
+            horizontal *= speed;
+            vertical *= speed;
+
+            posX = parseInt(getComputedStyle(circle).getPropertyValue("left"));
+            posY = parseInt(getComputedStyle(circle).getPropertyValue("top"));
+
+            var x = (posX + horizontal);
+            var y = (posY + vertical);
+
+            if (checkBound(x, y)) {
+                circle.style.left = x + "px";
+                circle.style.top = y + "px";
+            }
+        }
+
+        function checkBound(x, y) {
+            return ((x > 0) &&
+                    (x < fieldWidth) &&
+                    (y > 0) &&
+                    (y < fieldHeight));
+        }
+
+    </script>
+</head>
+<body>
+    <div id="field">
+        <div id="circle"></div>
+    </div>
+
+    <div class="control">
+        <div class="arrow">
+            <button id="btn_up">Up</button><br>
+            <button id="btn_left">Left</button>
+            <button id="btn_right">Right</button><br>
+            <button id="btn_down">Down</button>
+    
+        </div>
+        <div class="speed">
+            <label>SPEED</label>
+            <input type="text" id="speed" value="10">
+        </div>
+    </div>
+
+</body>
+</html>

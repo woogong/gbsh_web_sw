@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var korean = Number(prompt("국어 성적을 입력하세요."));
+        var math = prompt("수학 성적을 입력하세요.") - 0;
+        var english = prompt("영어 성적을 입력하세요.") - 0;
+        var science = prompt("과학 성적을 입력하세요.") - 0;
+
+        var total = (korean + math + english + science);
+        var average = total / 4;
+
+        var grade;
+
+        if (average >= 90) {
+            grade = "수";
+        } else if (average >= 80) {
+            grade = "우";
+        } else if (average >= 70) {
+                grade = "미";
+        } else if (average >= 60) {
+                grade = "양";
+        } else {
+                grade = "가";
+        }
+
+        alert("당신의 성적은 " + grade + " 입니다");
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

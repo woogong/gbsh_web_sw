@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            margin: 30px;;
+        }
+
+        #btn {
+            margin-left: 60px;
+            font-size: 1.5rem;
+            padding: 5px;
+        }
+
+    </style>
+
+    <script>
+        window.onload = function() {
+            var image = document.getElementById("image");
+            var button = document.getElementById("btn");
+
+            button.onclick = function(event) {
+                var value = event.target.value;
+                
+                if (value == "숨기기") {
+                    event.target.value = "보이기";
+                    image.style.display = "none";
+
+                } else {
+                    event.target.value = "숨기기";
+                    image.style.display = "inline";
+                }
+            }
+        };
+    </script>
+</head>
+<body>
+    <input type="button" id="btn" value="숨기기">
+
+    <div class="box">
+        <img id="image" src="../image/pororo.jfif">
+    </div>
+</body>
+</html>

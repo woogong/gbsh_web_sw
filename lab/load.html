@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=0, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #box {
+        width: 500px;
+        height: 300px;
+        border: 1px solid #EEE;
+    }
+
+
+</style>
+
+<script>
+
+    window.onload = (event) => {
+        console.log("loaded", event);
+    }
+
+    (
+    function() {
+        console.log("zzzz");
+    })();
+
+
+
+</script>
+
+<body>
+    
+    <div id="box"> </div>
+
+</body>
+
+<script>
+    var box = document.getElementById("box");
+
+    box.onclick = function() {
+        console.log("aaa");
+    };
+</script>
+
+</html>

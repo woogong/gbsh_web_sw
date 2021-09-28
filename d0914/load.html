@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    #box {
+        width: 500px;
+        height: 300px;
+        border: 1px solid #000;
+    }
+</style>
+
+<script>
+
+    console.log("pos1");
+
+    function loaded(event) {
+        var box = document.getElementById("box");
+
+        box.onclick = function(event) {
+            console.log("click event", event);
+        };
+
+        box.onmouseover = function() {
+            event.target.style.backgroundColor = "#FF00FF";
+        };
+
+        box.addEventListener("mouseover", function(event) {
+            event.target.style.backgroundColor = "#FF00FF";
+        });
+
+        box.addEventListener("mouseout", function(event) {
+            event.target.style.backgroundColor = "#FFFFFF";
+        });
+    }
+</script>
+
+<body onload="loaded(event);">
+    
+    <div id="box"></div>
+
+</body>
+
+</html>

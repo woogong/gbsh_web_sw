@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .rec {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000;
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <script>
+        function myClick(event) {
+            var rect = document.getElementById("box");
+
+            rect.style.backgroundColor = "#FF0000";
+        }
+
+        function changeToRed(event) {
+            target = event.target;
+            target.style.backgroundColor = "#FF0000";
+        }
+
+        function changeToWhite(event) {
+            target = event.target;
+            target.style.backgroundColor = "#FFFFFF";
+        }
+
+        function showPosition(event) {
+            var x = event.clientX;
+            var y = event.clientY;
+
+            //console.log(x + " - " + y);
+        }
+
+    </script>
+</head>
+<body>
+    <h1>이벤트</h1>
+
+    <div id="box" class="rec" 
+        onclick="myClick(event);"
+        onmouseover="changeToRed(event);"
+        onmouseout="changeToWhite(event);"
+        onmousemove="showPosition(event);"></div>
+
+
+</body>
+</html>

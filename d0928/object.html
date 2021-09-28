@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        var people = {};
+        people.name = "정재봉";
+        people.age = 49;
+        people.gender = 'M';
+
+        var jh = {};
+        jh.name = "임재현";
+        jh.age = 17;
+        jh.gender = "M";
+        jh['height'] = 180;
+        jh.print = function() {
+            alert("나의 이름은 " + this.name + "입니다.");
+        }
+
+        //jh.print();
+
+        console.log(jh);
+
+        var jin = {
+            name: '김진효',
+            age: 17,
+            gender: 'M'
+        };
+
+
+        var dateManager = {
+            today: new Date(),
+            show: function() {
+                var year = this.today.getFullYear();
+                var month = this.today.getMonth() + 1;
+                var date = this.today.getDate();
+                
+                var dateStr = year + "년 ";
+                dateStr += month + "월 ";
+                dateStr += date + "일";
+
+                alert("오늘은 " + dateStr + "입니다.");
+            }
+        };
+
+        //dateManager.show();
+
+        var adder = {
+            setValue: function(value1, value2) {
+                this.value1 = value1;
+                this.value2 = value2;
+            },
+
+            add: function() {
+                return this.value1 + this.value2;
+            }
+        };
+
+        var subtractor = {
+            setValue: function(value1, value2) {
+                this.value1 = value1;
+                this.value2 = value2;
+            },
+
+            subtract: function() {
+                return this.value1 - this.value2;
+            }
+        };
+
+        adder.setValue(21412512, 2141241);
+        console.log(adder.add());
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

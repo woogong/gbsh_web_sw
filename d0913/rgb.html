@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .rec {
+            width: 300px;
+            height: 300px;
+            border: 1px solid #000;
+            margin-bottom: 10px;
+            background-color: #000;
+        }
+    </style>
+
+    <script>
+
+        var red = 0;
+        var green = 0;
+        var blue = 0;
+
+        function changeColor(color) {
+            if (color == "red") {
+                red += 10;
+            } else if (color == "green") {
+                green += 10;
+            } else if (color == "blue") {
+                blue += 10;
+            }
+            
+            var rect = document.getElementById("box");
+
+
+            rect.style.backgroundColor = "rgb(" + red + ", " + green + ", " + blue + ")";
+        }
+
+    </script>
+
+</head>
+<body>
+    <div id="box" class="rec" ></div>
+
+    <input type="button" value="Red" onclick="changeColor('red');">
+    <input type="button" value="Green" onclick="changeColor('green');">
+    <input type="button" value="Blue" onclick="changeColor('blue');">
+</body>
+</html>

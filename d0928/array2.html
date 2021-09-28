@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        var names = [];
+        console.log(names.length);
+
+        names.push("권기찬");
+        names.push("박경민");
+        names.push("윤서준");
+        console.log(names.length, names[0], names[1]);
+
+        var str = names.join(",");
+        console.log("after join", str);
+
+        var popped = names.pop();
+        console.log("popped", popped, names.length);
+
+        var a = names.splice(0, 1);
+        for (var i in names) {
+            console.log(i, names[i]);
+        }
+
+        
+
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

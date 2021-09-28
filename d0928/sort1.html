@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const LENGTH = 100;
+
+        function makeArray() {
+            var array = [];
+            for (var i = 0 ; i < LENGTH ; i++) {
+                array.push(makeRandomNumber());
+            }
+
+            return array;
+        }
+
+        function makeRandomNumber() {
+            return Math.floor(Math.random() * 1000);
+        }
+
+        function printArray(array) {
+            console.log("print array");
+            for (var i in array) {
+                console.log(i, array[i]);
+            }
+        }
+
+        function sort(array) {
+            // TODO
+            
+        }
+
+        var array = makeArray();
+        sort(array);
+        printArray(array);
+
+    </script>
+
+
+</head>
+<body>
+    
+</body>
+</html>

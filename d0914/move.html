@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 95%;
+            height: 600px;
+            border: 1px solid #888;
+            margin: 10px auto 20px auto;
+            background-color: #AEE;
+        }
+
+        input[type='text'] {
+            width: 6rem;
+            text-align: center;
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+
+        label {
+            font-size: 1.5rem;
+            margin-right: 10px;
+            margin-left: 10px;
+        }
+
+        .show {
+            text-align: center;
+        }
+
+    </style>
+
+    <script>
+
+        window.onload = function() {
+            var box = document.getElementById("box");
+    
+            box.onmousemove = function (event) {
+                console.log(event);
+                var axisX = document.getElementById("axis_x");
+                var axisY = document.getElementById("axis_y");
+
+                axisX.value = event.offsetX;
+                axisY.value = event.offsetY;
+            }
+        };
+
+
+    </script>
+
+</head>
+<body>
+
+    <div id="box">
+
+    </div>
+
+    <div class="show">
+        <label>X</label><input type="text" id="axis_x">
+        <label>Y</label><input type="text" id="axis_y">
+    </div>
+    
+</body>
+
+<script>
+
+
+</script>
+</html>

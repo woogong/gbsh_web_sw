@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            width: 800px;
+            border: 1px solid #888888;
+        }
+
+        .wrap::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        .child {
+            width: 500px;
+            height: 400px;
+        }
+
+        .left {
+            background-color: #00FFFF;
+            float: left;
+        }
+
+        .right {
+            width: 300px;
+            background-color: #FF00FF;
+            float: right;
+        }
+
+    </style>
+
+    <script>
+
+        var value1 = 3;
+        var value2 = "a";
+        var value3 = 0xFF;
+        var value4 = 0o70;
+        var value5 = 0b10;
+
+        console.log(value3, value4, value5);
+        
+
+    </script>
+
+</head>
+<body>
+    
+    <div class="wrap">
+        <div class="left child">LEFT</div>
+        <div class="right child">RIGHT</div>
+    </div>
+
+    <div style="background-image: url(../loopy.jfif); width: 1000px; height: 500px; border: 1px solid #888888; background-repeat: no-repeat; background-position: center center; background-size: 10%;">
+    </div>
+
+</body>
+</html>

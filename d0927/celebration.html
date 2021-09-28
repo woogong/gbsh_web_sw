@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main {
+            border: 1px solid #CCC;
+            margin: 2rem auto 0 auto;
+            width: 50rem;
+        }
+
+        .top {
+            text-align: center;
+            padding: 3rem;
+        }
+
+        .elapsed {
+            font-size: 5rem;
+            color: #444;
+        }
+
+        .seperator {
+            height: 2rem;
+            background-color: #CCC;
+        }
+
+        .date  {
+            list-style: none;
+            width: 100%;
+            text-align: center;
+            padding: 0;
+            font-size: 2rem;
+            color: rgb(63, 61, 61);
+        }
+
+        .date li {
+            margin: 2rem;
+        }
+
+        .date label {
+            margin-right: 7rem;
+            display: inline-block;
+            width: 20%;
+        }
+
+        .date span {
+            display: inline-block;
+            width: 60%;
+            text-align: center;
+        }
+
+        .dateInput {
+            text-align: center;
+            margin: 1rem;
+        }
+
+    </style>
+
+    <script>
+        const FIRST_DATE = "2021-08-10 00:00:00";
+        const ONE_DAY = 24 * 60 * 60 * 1000;
+
+        window.onload = function() {
+            var dateInput = document.getElementById("date");
+            dateInput.value = formatDate2(new Date());
+
+            showCelebrations();
+        };
+
+        var firstDate;
+        function showCelebrations() {
+            var dateInput = document.getElementById("date");
+            
+            firstDate = new Date(dateInput.value);
+            firstDate.setHours(0, 0, 0, 0);
+            
+            showElapsedDays();
+            showDays();
+        }
+
+        function showElapsedDays() {
+            var today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            var elapsedTime = today.getTime() - firstDate.getTime();
+            var elapsedDays = elapsedTime / ONE_DAY + 1;
+
+            var span = document.getElementById("elapsedDays");
+            span.innerHTML = elapsedDays + "일";
+        }
+
+        function showDays() {
+            var date100 = new Date();
+            date100.setTime(firstDate.getTime() + (99 * ONE_DAY));
+            
+            var span = document.getElementById("d100");
+            span.innerHTML = formatDate(date100);
+
+            var date200 = new Date();
+            date200.setTime(firstDate.getTime() + (199 * ONE_DAY));
+            
+            span = document.getElementById("d200");
+            span.innerHTML = formatDate(date200);
+
+            var date300 = new Date();
+            date300.setTime(firstDate.getTime() + (299 * ONE_DAY));
+            
+            span = document.getElementById("d300");
+            span.innerHTML = formatDate(date300);
+        }
+
+        function formatDate(date) {
+            var str = date.getFullYear() + "년 ";
+            str += (date.getMonth() + 1) + "월 ";
+            str += date.getDate() + "일";
+
+            return str;
+        }
+
+        function formatDate2(date) {
+            var str = date.getFullYear() + "-";
+            str += formatNumber(date.getMonth() + 1) + "-";
+            str += formatNumber(date.getDate());
+
+            return str;
+        }
+
+        function formatNumber(value) {
+            if ((value + "").length == 1) {
+                return "0" + value;
+            }
+
+            return value + "";
+        }
+
+    </script>
+</head>
+<body>
+
+    <div class="main">
+        <div class="top">
+            <span class="elapsed" id="elapsedDays">47일</span>
+        </div>
+        <div class="seperator">
+        </div>
+        <div>
+            <ul class="date">
+                <li>
+                    <label>100일</label>
+                    <span id="d100">2021년 11월 20일</span>
+                </li>
+                <li>
+                    <label>200일</label>
+                    <span id="d200">2021년 11월 20일</span>
+                </li>
+                <li>
+                    <label>300일</label>
+                    <span id="d300">2021년 11월 20일</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="dateInput">
+            <input type="date" name="date" id="date">
+            <input type="button" value="계산" onclick="showCelebrations();">
+        </div>
+    </div>
+    
+
+</body>
+</html>

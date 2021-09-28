@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function People(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        var park = new People("박세니", 30);
+        var rolling = new People("J.K 롤링", 55);
+
+        function Book(title, writer, price) {
+            this.title = title;
+            this.writer = writer;
+            this.price = price;
+
+            this.print = function() {
+                console.log(this.title + "  " + this.writer.name);
+            }
+        }
+
+        var harryPotter = new Book("해리포터", rolling, 12000);
+        var awake = new Book("Awake", park, 10000);
+        console.log(harryPotter);
+
+        harryPotter.print();
+        awake.print();
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>

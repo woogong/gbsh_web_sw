@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+
+        div {
+            margin: 10px;
+        }
+
+        label {
+            display: inline-block;
+            width: 120px;
+            text-align: right;
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <h1>회원가입</h1>
+
+    <div style="width: 800px;">
+    <form method="get" action="http://172.16.1.128:8080/read">
+        <div>
+            <label>아이디</label>
+            <input type="text" name="id">
+        </div>
+
+        <div>
+            <label>비밀번호</label>
+            <input type="password" name="password">
+        </div>
+
+        <div>
+            <label>이름</label>
+            <input type="text" name="name">
+        </div>
+
+        <div>
+            <label>거주지역</label>
+            <select name="region">
+                <option>서울</option>
+                <option>부산</option>
+                <option>인천</option>
+                <option>대구</option>
+                <option>광주</option>
+                <option>대전</option>
+                <option>울산</option>
+                <option>세종</option>
+                <option>경기</option>
+                <option>충북</option>
+                <option>충남</option>
+                <option>전북</option>
+                <option>전남</option>
+                <option>강원</option>
+                <option>경북</option>
+                <option>경남</option>
+                <option>제주</option>
+            </select>
+        </div>
+
+        <div>
+            <label>성별</label>
+            <input type="radio" name="gender" value="M"> 남자
+            <input type="radio" name="gender" value="F"> 여자
+        </div>
+
+        <div>
+            <label>전화번호</label>
+            <input type="tel" name="phone">
+        </div>
+
+        <div>
+            <label>자기소개서</label>
+            <textarea name="introduction" rows="10" cols="80"></textarea>
+        </div>
+
+        <div>
+            <label></label>
+            <span>이메일 수신 동의</span>
+            <input type="checkbox" name="agreement" value="Y">
+        </div>
+
+        <div style="text-align: center;">
+            <input type="submit" value="가입">
+        </div>
+
+    </form>
+    </div>
+</body>
+</html>

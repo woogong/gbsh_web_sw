@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+            padding: 10px;
+            border: 1px solid #000;
+            width: 95%;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .item {
+            width: 150px;
+            border: 1px solid #888;
+            margin-bottom: 1rem;
+        }
+
+        .item ul {
+            text-align: center;
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .item h3 {
+            text-align: center;
+        }
+
+
+        .item2 {
+            width: 200px;
+            height: 200px;
+            background-color: #00FFFF;
+        }
+
+        .item3 {
+            width: 500px;
+            height: 200px;
+            background-color: #FF00FF;
+        }
+
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <script>
+            for (var i = 2 ; i <= 9 ; i++) {
+                document.write("<div class='item'>");
+                document.write("<h3>" + i + "단</h3>")
+                document.write("<ul>");
+                
+                for (var j = 1 ; j <= 9 ; j++) {
+                    document.write("<li>" + i + " * " + 
+                        j + " = " + (i * j) + "</li>");
+                }
+
+                document.write("</ul>");
+                document.write("</div>");
+            }
+        </script>
+
+    </div>
+
+</body>
+</html>

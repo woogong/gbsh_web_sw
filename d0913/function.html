@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+
+        function hello(name) {
+            console.log("hello " + name);
+            return 10;
+        }
+
+        function plus(value1, value2) {
+            return value1 + value2;
+        }
+
+        hello('abc');
+
+        var result = plus(3, 4);
+
+        var sum = 0;
+
+        // 하나의 숫자를 입력받아서, 위의 sum 변수에 더해가는 함수를
+        // 작성하세요.
+        function add(value) {
+            sum = sum + value;
+        }
+
+        // 두 개의 숫자를 입력받아서, 큰 수를 리턴하는 함수를 작성하세요.
+        function findBig(value1, value2) {
+            if (value1 > value2) {
+                return value1;
+            } else if (value2 > value1) {
+                return value2;
+            }
+        }
+
+        // 하나의 정수를 입력받아서, 그 수가 짝수라면 true, 
+        // 아니면 false 을 리턴하는 함수를 작성하세요.
+        function isEven(value) {
+            return (value % 2 == 0);
+        }
+
+        // 두 수를 입력받아서, 두 수의 차를 구하는 함수를 작성하세요.
+
+        // 하나의 문자열을 입력받아서, 그 문자열 안에 'a'가 몇 개 들어 있는지 구하는 함수를 작성하세요. 
+        // 예를 들어 'america' 안에는 a가 2개 있으니 2을 리턴합니다.
+
+        function countChar(str, ch) {
+            var count = 0;
+            for (var i = 0 ; i < str.length ; i++) {
+                if (str.charAt(i) == ch) {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+
+
+    </script>
+
+</head>
+<body>
+    
+</body>
+</html>
