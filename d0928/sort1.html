@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        const LENGTH = 100;
+        const LENGTH = 10000000;
 
         function makeArray() {
             var array = [];
-            for (var i = 0 ; i < LENGTH ; i++) {
+            for (var i = 0; i < LENGTH; i++) {
                 array.push(makeRandomNumber());
             }
 
@@ -30,18 +31,42 @@
 
         function sort(array) {
             // TODO
-            
+            var min;
+            for (var i = 0 ; i < array.length ; i++) {
+                min = i;
+                for (var j = i ; j < array.length ; j++) {
+                    if (array[min] > array[j]) {
+                        min = j;
+                    }
+                }
+
+                var temp = array[i];
+                array[i] = array[min];
+                array[min] = temp; 
+            }
+        }
+
+        function sortAnother(array) {
+            array.sort();
         }
 
         var array = makeArray();
-        sort(array);
-        printArray(array);
+
+        var step1 = new Date().getTime();
+        sortAnother(array);
+        var step2 = new Date().getTime();
+
+        //printArray(array);
+
+        console.log("Sorting time", step2 - step1);
 
     </script>
 
 
 </head>
+
 <body>
-    
+
 </body>
+
 </html>
