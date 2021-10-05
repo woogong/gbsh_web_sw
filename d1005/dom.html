@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">DOM 공부</h1>
+
+    <p id="desc" style="font-size: 20px;">DOM은 dynamic html을 구성하기 위한 핵심이다</p>
+
+    <ul id="list" class="list">
+        <li>DOM을 이용해서 HTML element을 조작할 수 있다</li>
+    </ul>
+</body>
+
+<script>
+
+    var elem1 = document.getElementById("title");
+    console.log(elem1);
+
+    elem1.innerHTML = "DOM study";
+
+</script>
+
+</html>

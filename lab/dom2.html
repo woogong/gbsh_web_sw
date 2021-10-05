@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 10px;
+        }
+
+        div {
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <div>DOM이란 무엇이지?</div>
+    <div>aaa</div>
+
+    <button id="btn">알려주세요</button>
+
+</body>
+
+<script>
+    document.getElementById("btn").onclick = function() {
+        document.getElementsByTagName("div")[0].innerHTML = "The document object represents your web page. If you want to access any element in an HTML page, you always start with accessing the document object. Below are some examples of how you can use the document object to access and manipulate HTML.";
+    }
+
+    var a = document.querySelector("div");
+    console.log(a);
+
+    var b = document.querySelectorAll("div");
+    console.log(b);
+
+    var c = document.getElementsByTagName("div");
+    console.log(c);
+
+</script>
+</html>
