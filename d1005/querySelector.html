@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>DOM 공부</h1>
+
+    <div class="poem" name="국화옆에서">
+        <span id="poem1">한 송이 국화꽃을 피우기 위해서</span>
+    </div>
+
+    <div class="poem" name="승무">
+        <span id="poem2">얇은 사 하이얀 고깔은 고이 접어서 나빌레라</span>
+    </div>
+
+    <div class="study" data="2">
+        DOM은 document object model의 준말이다.
+    </div>
+
+</body>
+
+<script>
+    var poem1 = document.querySelector("#poem1");
+    poem1.style.color = "#FFFF00";
+    poem1.style.backgroundColor = "#FF00FF";
+
+    var poem2 = document.querySelector("#poem2");
+    poem2.style.color = "#FFFFFF";
+    poem2.style.backgroundColor = "#000000";
+
+    var poems = document.querySelectorAll(".poem");
+    console.log(poems);
+    for (var i = 0 ; i < poems.length ; i++) {
+        poems[i].style.fontSize = "20px";
+    }
+
+    var a = document.querySelectorAll("[data]");
+    console.log(a);
+
+</script>
+
+</html>

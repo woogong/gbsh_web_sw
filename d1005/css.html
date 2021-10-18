@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        div, span {
+            color: red;
+        }
+
+        .grandfa>div {
+            color: green;
+        }
+
+        [name='hello'] {
+            background-color: magenta;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <p class="para number">
+        첫번째 문단
+        <div class="number">123456</div>
+        <div class="character">abcdef <span class="number">1234</span> </div>
+    </p>
+
+    <p class="para" name="qqqq">
+        두번째 문단
+    </p>
+
+    <div class="number" name="hello">00000000</div>
+
+    <span name="goodbye">Hello</span>
+
+    <div class="grandfa">
+        할아버지
+        <div class="father">
+            아버지
+            <div class="me">나</div>
+        </div>
+
+    </div>
+
+    <input type="text" name="input">
+    <input type="button" name="btn" value="SHOW">
+</body>
+
+<script>
+    var qqqq = document.querySelector("[name='qqqq']");
+    qqqq.style.fontSize = "100px";
+
+    var btn = document.querySelector("[type='button']");
+    btn.onclick = function() {
+        var input = document.querySelector("[name='input']");
+        var str = input.value;
+
+        alert(str);
+    };
+
+</script>
+</html>

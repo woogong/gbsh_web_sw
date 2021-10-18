@@ -8,9 +8,20 @@
 </head>
 <body>
     
-    <div>Dom이란 무엇인가?</div>
+    <div id="desc">Dom이란 무엇인가?</div>
 
-    <button>번역</button>
+    <button id="btn">번역</button>
 
 </body>
+
+<script>
+
+    var btn = document.getElementById("btn");
+    btn.onclick = function() {
+        var div = document.getElementById("desc");
+        div.innerHTML = "What is the DOM?";
+    };
+
+</script>
+
 </html>
